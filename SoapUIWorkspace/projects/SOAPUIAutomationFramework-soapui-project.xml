@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6ba2979e-aeaa-4b4d-bd51-61d068a10204" activeEnvironment="Default" name="SOAPUIAutomationFramework" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="f01d9a1a-875a-40ab-bedb-11bd5114262f" wsaVersion="NONE" name="CurrencyConvertorSoap" type="wsdl" bindingName="{http://www.webserviceX.NET/}CurrencyConvertorSoap" soapVersion="1_1" anonymous="optional" definition="file:/home/ryan/Downloads/currencyconvertor.asmx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="file:/home/ryan/Downloads/currencyconvertor.asmx">
+      <con:part>
+        <con:url>file:/home/ryan/Downloads/currencyconvertor.asmx</con:url>
+        <con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webserviceX.NET/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET/">
+      <s:element name="ConversionRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FromCurrency" type="tns:Currency"/>
+            <s:element minOccurs="1" maxOccurs="1" name="ToCurrency" type="tns:Currency"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Currency">
+        <s:restriction base="s:string">
+          <s:enumeration value="AFA"/>
+          <s:enumeration value="ALL"/>
+          <s:enumeration value="DZD"/>
+          <s:enumeration value="ARS"/>
+          <s:enumeration value="AWG"/>
+          <s:enumeration value="AUD"/>
+          <s:enumeration value="BSD"/>
+          <s:enumeration value="BHD"/>
+          <s:enumeration value="BDT"/>
+          <s:enumeration value="BBD"/>
+          <s:enumeration value="BZD"/>
+          <s:enumeration value="BMD"/>
+          <s:enumeration value="BTN"/>
+          <s:enumeration value="BOB"/>
+          <s:enumeration value="BWP"/>
+          <s:enumeration value="BRL"/>
+          <s:enumeration value="GBP"/>
+          <s:enumeration value="BND"/>
+          <s:enumeration value="BIF"/>
+          <s:enumeration value="XOF"/>
+          <s:enumeration value="XAF"/>
+          <s:enumeration value="KHR"/>
+          <s:enumeration value="CAD"/>
+          <s:enumeration value="CVE"/>
+          <s:enumeration value="KYD"/>
+          <s:enumeration value="CLP"/>
+          <s:enumeration value="CNY"/>
+          <s:enumeration value="COP"/>
+          <s:enumeration value="KMF"/>
+          <s:enumeration value="CRC"/>
+          <s:enumeration value="HRK"/>
+          <s:enumeration value="CUP"/>
+          <s:enumeration value="CYP"/>
+          <s:enumeration value="CZK"/>
+          <s:enumeration value="DKK"/>
+          <s:enumeration value="DJF"/>
+          <s:enumeration value="DOP"/>
+          <s:enumeration value="XCD"/>
+          <s:enumeration value="EGP"/>
+          <s:enumeration value="SVC"/>
+          <s:enumeration value="EEK"/>
+          <s:enumeration value="ETB"/>
+          <s:enumeration value="EUR"/>
+          <s:enumeration value="FKP"/>
+          <s:enumeration value="GMD"/>
+          <s:enumeration value="GHC"/>
+          <s:enumeration value="GIP"/>
+          <s:enumeration value="XAU"/>
+          <s:enumeration value="GTQ"/>
+          <s:enumeration value="GNF"/>
+          <s:enumeration value="GYD"/>
+          <s:enumeration value="HTG"/>
+          <s:enumeration value="HNL"/>
+          <s:enumeration value="HKD"/>
+          <s:enumeration value="HUF"/>
+          <s:enumeration value="ISK"/>
+          <s:enumeration value="INR"/>
+          <s:enumeration value="IDR"/>
+          <s:enumeration value="IQD"/>
+          <s:enumeration value="ILS"/>
+          <s:enumeration value="JMD"/>
+          <s:enumeration value="JPY"/>
+          <s:enumeration value="JOD"/>
+          <s:enumeration value="KZT"/>
+          <s:enumeration value="KES"/>
+          <s:enumeration value="KRW"/>
+          <s:enumeration value="KWD"/>
+          <s:enumeration value="LAK"/>
+          <s:enumeration value="LVL"/>
+          <s:enumeration value="LBP"/>
+          <s:enumeration value="LSL"/>
+          <s:enumeration value="LRD"/>
+          <s:enumeration value="LYD"/>
+          <s:enumeration value="LTL"/>
+          <s:enumeration value="MOP"/>
+          <s:enumeration value="MKD"/>
+          <s:enumeration value="MGF"/>
+          <s:enumeration value="MWK"/>
+          <s:enumeration value="MYR"/>
+          <s:enumeration value="MVR"/>
+          <s:enumeration value="MTL"/>
+          <s:enumeration value="MRO"/>
+          <s:enumeration value="MUR"/>
+          <s:enumeration value="MXN"/>
+          <s:enumeration value="MDL"/>
+          <s:enumeration value="MNT"/>
+          <s:enumeration value="MAD"/>
+          <s:enumeration value="MZM"/>
+          <s:enumeration value="MMK"/>
+          <s:enumeration value="NAD"/>
+          <s:enumeration value="NPR"/>
+          <s:enumeration value="ANG"/>
+          <s:enumeration value="NZD"/>
+          <s:enumeration value="NIO"/>
+          <s:enumeration value="NGN"/>
+          <s:enumeration value="KPW"/>
+          <s:enumeration value="NOK"/>
+          <s:enumeration value="OMR"/>
+          <s:enumeration value="XPF"/>
+          <s:enumeration value="PKR"/>
+          <s:enumeration value="XPD"/>
+          <s:enumeration value="PAB"/>
+          <s:enumeration value="PGK"/>
+          <s:enumeration value="PYG"/>
+          <s:enumeration value="PEN"/>
+          <s:enumeration value="PHP"/>
+          <s:enumeration value="XPT"/>
+          <s:enumeration value="PLN"/>
+          <s:enumeration value="QAR"/>
+          <s:enumeration value="ROL"/>
+          <s:enumeration value="RUB"/>
+          <s:enumeration value="WST"/>
+          <s:enumeration value="STD"/>
+          <s:enumeration value="SAR"/>
+          <s:enumeration value="SCR"/>
+          <s:enumeration value="SLL"/>
+          <s:enumeration value="XAG"/>
+          <s:enumeration value="SGD"/>
+          <s:enumeration value="SKK"/>
+          <s:enumeration value="SIT"/>
+          <s:enumeration value="SBD"/>
+          <s:enumeration value="SOS"/>
+          <s:enumeration value="ZAR"/>
+          <s:enumeration value="LKR"/>
+          <s:enumeration value="SHP"/>
+          <s:enumeration value="SDD"/>
+          <s:enumeration value="SRG"/>
+          <s:enumeration value="SZL"/>
+          <s:enumeration value="SEK"/>
+          <s:enumeration value="CHF"/>
+          <s:enumeration value="SYP"/>
+          <s:enumeration value="TWD"/>
+          <s:enumeration value="TZS"/>
+          <s:enumeration value="THB"/>
+          <s:enumeration value="TOP"/>
+          <s:enumeration value="TTD"/>
+          <s:enumeration value="TND"/>
+          <s:enumeration value="TRL"/>
+          <s:enumeration value="USD"/>
+          <s:enumeration value="AED"/>
+          <s:enumeration value="UGX"/>
+          <s:enumeration value="UAH"/>
+          <s:enumeration value="UYU"/>
+          <s:enumeration value="VUV"/>
+          <s:enumeration value="VEB"/>
+          <s:enumeration value="VND"/>
+          <s:enumeration value="YER"/>
+          <s:enumeration value="YUM"/>
+          <s:enumeration value="ZMK"/>
+          <s:enumeration value="ZWD"/>
+          <s:enumeration value="TRY"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ConversionRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConversionRateResult" type="s:double"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="double" type="s:double"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConversionRateSoapIn">
+    <wsdl:part name="parameters" element="tns:ConversionRate"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateSoapOut">
+    <wsdl:part name="parameters" element="tns:ConversionRateResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpGetIn">
+    <wsdl:part name="FromCurrency" type="s:string"/>
+    <wsdl:part name="ToCurrency" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpGetOut">
+    <wsdl:part name="Body" element="tns:double"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpPostIn">
+    <wsdl:part name="FromCurrency" type="s:string"/>
+    <wsdl:part name="ToCurrency" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ConversionRateHttpPostOut">
+    <wsdl:part name="Body" element="tns:double"/>
+  </wsdl:message>
+  <wsdl:portType name="CurrencyConvertorSoap">
+    <wsdl:operation name="ConversionRate">
+      <wsdl:documentation><![CDATA[<br><b>Get conversion rate from one currency to another currency <b><br><p><b><font color='#000080' size='1' face='Verdana'><u>Differenct currency Code and Names around the world</u></font></b></p><blockquote><p><font face='Verdana' size='1'>AFA-Afghanistan Afghani<br>ALL-Albanian Lek<br>DZD-Algerian Dinar<br>ARS-Argentine Peso<br>AWG-Aruba Florin<br>AUD-Australian Dollar<br>BSD-Bahamian Dollar<br>BHD-Bahraini Dinar<br>BDT-Bangladesh Taka<br>BBD-Barbados Dollar<br>BZD-Belize Dollar<br>BMD-Bermuda Dollar<br>BTN-Bhutan Ngultrum<br>BOB-Bolivian Boliviano<br>BWP-Botswana Pula<br>BRL-Brazilian Real<br>GBP-British Pound<br>BND-Brunei Dollar<br>BIF-Burundi Franc<br>XOF-CFA Franc (BCEAO)<br>XAF-CFA Franc (BEAC)<br>KHR-Cambodia Riel<br>CAD-Canadian Dollar<br>CVE-Cape Verde Escudo<br>KYD-Cayman Islands Dollar<br>CLP-Chilean Peso<br>CNY-Chinese Yuan<br>COP-Colombian Peso<br>KMF-Comoros Franc<br>CRC-Costa Rica Colon<br>HRK-Croatian Kuna<br>CUP-Cuban Peso<br>CYP-Cyprus Pound<br>CZK-Czech Koruna<br>DKK-Danish Krone<br>DJF-Dijibouti Franc<br>DOP-Dominican Peso<br>XCD-East Caribbean Dollar<br>EGP-Egyptian Pound<br>SVC-El Salvador Colon<br>EEK-Estonian Kroon<br>ETB-Ethiopian Birr<br>EUR-Euro<br>FKP-Falkland Islands Pound<br>GMD-Gambian Dalasi<br>GHC-Ghanian Cedi<br>GIP-Gibraltar Pound<br>XAU-Gold Ounces<br>GTQ-Guatemala Quetzal<br>GNF-Guinea Franc<br>GYD-Guyana Dollar<br>HTG-Haiti Gourde<br>HNL-Honduras Lempira<br>HKD-Hong Kong Dollar<br>HUF-Hungarian Forint<br>ISK-Iceland Krona<br>INR-Indian Rupee<br>IDR-Indonesian Rupiah<br>IQD-Iraqi Dinar<br>ILS-Israeli Shekel<br>JMD-Jamaican Dollar<br>JPY-Japanese Yen<br>JOD-Jordanian Dinar<br>KZT-Kazakhstan Tenge<br>KES-Kenyan Shilling<br>KRW-Korean Won<br>KWD-Kuwaiti Dinar<br>LAK-Lao Kip<br>LVL-Latvian Lat<br>LBP-Lebanese Pound<br>LSL-Lesotho Loti<br>LRD-Liberian Dollar<br>LYD-Libyan Dinar<br>LTL-Lithuanian Lita<br>MOP-Macau Pataca<br>MKD-Macedonian Denar<br>MGF-Malagasy Franc<br>MWK-Malawi Kwacha<br>MYR-Malaysian Ringgit<br>MVR-Maldives Rufiyaa<br>MTL-Maltese Lira<br>MRO-Mauritania Ougulya<br>MUR-Mauritius Rupee<br>MXN-Mexican Peso<br>MDL-Moldovan Leu<br>MNT-Mongolian Tugrik<br>MAD-Moroccan Dirham<br>MZM-Mozambique Metical<br>MMK-Myanmar Kyat<br>NAD-Namibian Dollar<br>NPR-Nepalese Rupee<br>ANG-Neth Antilles Guilder<br>NZD-New Zealand Dollar<br>NIO-Nicaragua Cordoba<br>NGN-Nigerian Naira<br>KPW-North Korean Won<br>NOK-Norwegian Krone<br>OMR-Omani Rial<br>XPF-Pacific Franc<br>PKR-Pakistani Rupee<br>XPD-Palladium Ounces<br>PAB-Panama Balboa<br>PGK-Papua New Guinea Kina<br>PYG-Paraguayan Guarani<br>PEN-Peruvian Nuevo Sol<br>PHP-Philippine Peso<br>XPT-Platinum Ounces<br>PLN-Polish Zloty<br>QAR-Qatar Rial<br>ROL-Romanian Leu<br>RUB-Russian Rouble<br>WST-Samoa Tala<br>STD-Sao Tome Dobra<br>SAR-Saudi Arabian Riyal<br>SCR-Seychelles Rupee<br>SLL-Sierra Leone Leone<br>XAG-Silver Ounces<br>SGD-Singapore Dollar<br>SKK-Slovak Koruna<br>SIT-Slovenian Tolar<br>SBD-Solomon Islands Dollar<br>SOS-Somali Shilling<br>ZAR-South African Rand<br>LKR-Sri Lanka Rupee<br>SHP-St Helena Pound<br>SDD-Sudanese Dinar<br>SRG-Surinam Guilder<br>SZL-Swaziland Lilageni<br>SEK-Swedish Krona<br>TRY-Turkey Lira<br>CHF-Swiss Franc<br>SYP-Syrian Pound<br>TWD-Taiwan Dollar<br>TZS-Tanzanian Shilling<br>THB-Thai Baht<br>TOP-Tonga Pa'anga<br>TTD-Trinidad&amp;amp;Tobago Dollar<br>TND-Tunisian Dinar<br>TRL-Turkish Lira<br>USD-U.S. Dollar<br>AED-UAE Dirham<br>UGX-Ugandan Shilling<br>UAH-Ukraine Hryvnia<br>UYU-Uruguayan New Peso<br>VUV-Vanuatu Vatu<br>VEB-Venezuelan Bolivar<br>VND-Vietnam Dong<br>YER-Yemen Riyal<br>YUM-Yugoslav Dinar<br>ZMK-Zambian Kwacha<br>ZWD-Zimbabwe Dollar</font></p></blockquote>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:ConversionRateSoapIn"/>
+      <wsdl:output message="tns:ConversionRateSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CurrencyConvertorHttpGet">
+    <wsdl:operation name="ConversionRate">
+      <wsdl:documentation><![CDATA[<br><b>Get conversion rate from one currency to another currency <b><br><p><b><font color='#000080' size='1' face='Verdana'><u>Differenct currency Code and Names around the world</u></font></b></p><blockquote><p><font face='Verdana' size='1'>AFA-Afghanistan Afghani<br>ALL-Albanian Lek<br>DZD-Algerian Dinar<br>ARS-Argentine Peso<br>AWG-Aruba Florin<br>AUD-Australian Dollar<br>BSD-Bahamian Dollar<br>BHD-Bahraini Dinar<br>BDT-Bangladesh Taka<br>BBD-Barbados Dollar<br>BZD-Belize Dollar<br>BMD-Bermuda Dollar<br>BTN-Bhutan Ngultrum<br>BOB-Bolivian Boliviano<br>BWP-Botswana Pula<br>BRL-Brazilian Real<br>GBP-British Pound<br>BND-Brunei Dollar<br>BIF-Burundi Franc<br>XOF-CFA Franc (BCEAO)<br>XAF-CFA Franc (BEAC)<br>KHR-Cambodia Riel<br>CAD-Canadian Dollar<br>CVE-Cape Verde Escudo<br>KYD-Cayman Islands Dollar<br>CLP-Chilean Peso<br>CNY-Chinese Yuan<br>COP-Colombian Peso<br>KMF-Comoros Franc<br>CRC-Costa Rica Colon<br>HRK-Croatian Kuna<br>CUP-Cuban Peso<br>CYP-Cyprus Pound<br>CZK-Czech Koruna<br>DKK-Danish Krone<br>DJF-Dijibouti Franc<br>DOP-Dominican Peso<br>XCD-East Caribbean Dollar<br>EGP-Egyptian Pound<br>SVC-El Salvador Colon<br>EEK-Estonian Kroon<br>ETB-Ethiopian Birr<br>EUR-Euro<br>FKP-Falkland Islands Pound<br>GMD-Gambian Dalasi<br>GHC-Ghanian Cedi<br>GIP-Gibraltar Pound<br>XAU-Gold Ounces<br>GTQ-Guatemala Quetzal<br>GNF-Guinea Franc<br>GYD-Guyana Dollar<br>HTG-Haiti Gourde<br>HNL-Honduras Lempira<br>HKD-Hong Kong Dollar<br>HUF-Hungarian Forint<br>ISK-Iceland Krona<br>INR-Indian Rupee<br>IDR-Indonesian Rupiah<br>IQD-Iraqi Dinar<br>ILS-Israeli Shekel<br>JMD-Jamaican Dollar<br>JPY-Japanese Yen<br>JOD-Jordanian Dinar<br>KZT-Kazakhstan Tenge<br>KES-Kenyan Shilling<br>KRW-Korean Won<br>KWD-Kuwaiti Dinar<br>LAK-Lao Kip<br>LVL-Latvian Lat<br>LBP-Lebanese Pound<br>LSL-Lesotho Loti<br>LRD-Liberian Dollar<br>LYD-Libyan Dinar<br>LTL-Lithuanian Lita<br>MOP-Macau Pataca<br>MKD-Macedonian Denar<br>MGF-Malagasy Franc<br>MWK-Malawi Kwacha<br>MYR-Malaysian Ringgit<br>MVR-Maldives Rufiyaa<br>MTL-Maltese Lira<br>MRO-Mauritania Ougulya<br>MUR-Mauritius Rupee<br>MXN-Mexican Peso<br>MDL-Moldovan Leu<br>MNT-Mongolian Tugrik<br>MAD-Moroccan Dirham<br>MZM-Mozambique Metical<br>MMK-Myanmar Kyat<br>NAD-Namibian Dollar<br>NPR-Nepalese Rupee<br>ANG-Neth Antilles Guilder<br>NZD-New Zealand Dollar<br>NIO-Nicaragua Cordoba<br>NGN-Nigerian Naira<br>KPW-North Korean Won<br>NOK-Norwegian Krone<br>OMR-Omani Rial<br>XPF-Pacific Franc<br>PKR-Pakistani Rupee<br>XPD-Palladium Ounces<br>PAB-Panama Balboa<br>PGK-Papua New Guinea Kina<br>PYG-Paraguayan Guarani<br>PEN-Peruvian Nuevo Sol<br>PHP-Philippine Peso<br>XPT-Platinum Ounces<br>PLN-Polish Zloty<br>QAR-Qatar Rial<br>ROL-Romanian Leu<br>RUB-Russian Rouble<br>WST-Samoa Tala<br>STD-Sao Tome Dobra<br>SAR-Saudi Arabian Riyal<br>SCR-Seychelles Rupee<br>SLL-Sierra Leone Leone<br>XAG-Silver Ounces<br>SGD-Singapore Dollar<br>SKK-Slovak Koruna<br>SIT-Slovenian Tolar<br>SBD-Solomon Islands Dollar<br>SOS-Somali Shilling<br>ZAR-South African Rand<br>LKR-Sri Lanka Rupee<br>SHP-St Helena Pound<br>SDD-Sudanese Dinar<br>SRG-Surinam Guilder<br>SZL-Swaziland Lilageni<br>SEK-Swedish Krona<br>TRY-Turkey Lira<br>CHF-Swiss Franc<br>SYP-Syrian Pound<br>TWD-Taiwan Dollar<br>TZS-Tanzanian Shilling<br>THB-Thai Baht<br>TOP-Tonga Pa'anga<br>TTD-Trinidad&amp;amp;Tobago Dollar<br>TND-Tunisian Dinar<br>TRL-Turkish Lira<br>USD-U.S. Dollar<br>AED-UAE Dirham<br>UGX-Ugandan Shilling<br>UAH-Ukraine Hryvnia<br>UYU-Uruguayan New Peso<br>VUV-Vanuatu Vatu<br>VEB-Venezuelan Bolivar<br>VND-Vietnam Dong<br>YER-Yemen Riyal<br>YUM-Yugoslav Dinar<br>ZMK-Zambian Kwacha<br>ZWD-Zimbabwe Dollar</font></p></blockquote>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:ConversionRateHttpGetIn"/>
+      <wsdl:output message="tns:ConversionRateHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="CurrencyConvertorHttpPost">
+    <wsdl:operation name="ConversionRate">
+      <wsdl:documentation><![CDATA[<br><b>Get conversion rate from one currency to another currency <b><br><p><b><font color='#000080' size='1' face='Verdana'><u>Differenct currency Code and Names around the world</u></font></b></p><blockquote><p><font face='Verdana' size='1'>AFA-Afghanistan Afghani<br>ALL-Albanian Lek<br>DZD-Algerian Dinar<br>ARS-Argentine Peso<br>AWG-Aruba Florin<br>AUD-Australian Dollar<br>BSD-Bahamian Dollar<br>BHD-Bahraini Dinar<br>BDT-Bangladesh Taka<br>BBD-Barbados Dollar<br>BZD-Belize Dollar<br>BMD-Bermuda Dollar<br>BTN-Bhutan Ngultrum<br>BOB-Bolivian Boliviano<br>BWP-Botswana Pula<br>BRL-Brazilian Real<br>GBP-British Pound<br>BND-Brunei Dollar<br>BIF-Burundi Franc<br>XOF-CFA Franc (BCEAO)<br>XAF-CFA Franc (BEAC)<br>KHR-Cambodia Riel<br>CAD-Canadian Dollar<br>CVE-Cape Verde Escudo<br>KYD-Cayman Islands Dollar<br>CLP-Chilean Peso<br>CNY-Chinese Yuan<br>COP-Colombian Peso<br>KMF-Comoros Franc<br>CRC-Costa Rica Colon<br>HRK-Croatian Kuna<br>CUP-Cuban Peso<br>CYP-Cyprus Pound<br>CZK-Czech Koruna<br>DKK-Danish Krone<br>DJF-Dijibouti Franc<br>DOP-Dominican Peso<br>XCD-East Caribbean Dollar<br>EGP-Egyptian Pound<br>SVC-El Salvador Colon<br>EEK-Estonian Kroon<br>ETB-Ethiopian Birr<br>EUR-Euro<br>FKP-Falkland Islands Pound<br>GMD-Gambian Dalasi<br>GHC-Ghanian Cedi<br>GIP-Gibraltar Pound<br>XAU-Gold Ounces<br>GTQ-Guatemala Quetzal<br>GNF-Guinea Franc<br>GYD-Guyana Dollar<br>HTG-Haiti Gourde<br>HNL-Honduras Lempira<br>HKD-Hong Kong Dollar<br>HUF-Hungarian Forint<br>ISK-Iceland Krona<br>INR-Indian Rupee<br>IDR-Indonesian Rupiah<br>IQD-Iraqi Dinar<br>ILS-Israeli Shekel<br>JMD-Jamaican Dollar<br>JPY-Japanese Yen<br>JOD-Jordanian Dinar<br>KZT-Kazakhstan Tenge<br>KES-Kenyan Shilling<br>KRW-Korean Won<br>KWD-Kuwaiti Dinar<br>LAK-Lao Kip<br>LVL-Latvian Lat<br>LBP-Lebanese Pound<br>LSL-Lesotho Loti<br>LRD-Liberian Dollar<br>LYD-Libyan Dinar<br>LTL-Lithuanian Lita<br>MOP-Macau Pataca<br>MKD-Macedonian Denar<br>MGF-Malagasy Franc<br>MWK-Malawi Kwacha<br>MYR-Malaysian Ringgit<br>MVR-Maldives Rufiyaa<br>MTL-Maltese Lira<br>MRO-Mauritania Ougulya<br>MUR-Mauritius Rupee<br>MXN-Mexican Peso<br>MDL-Moldovan Leu<br>MNT-Mongolian Tugrik<br>MAD-Moroccan Dirham<br>MZM-Mozambique Metical<br>MMK-Myanmar Kyat<br>NAD-Namibian Dollar<br>NPR-Nepalese Rupee<br>ANG-Neth Antilles Guilder<br>NZD-New Zealand Dollar<br>NIO-Nicaragua Cordoba<br>NGN-Nigerian Naira<br>KPW-North Korean Won<br>NOK-Norwegian Krone<br>OMR-Omani Rial<br>XPF-Pacific Franc<br>PKR-Pakistani Rupee<br>XPD-Palladium Ounces<br>PAB-Panama Balboa<br>PGK-Papua New Guinea Kina<br>PYG-Paraguayan Guarani<br>PEN-Peruvian Nuevo Sol<br>PHP-Philippine Peso<br>XPT-Platinum Ounces<br>PLN-Polish Zloty<br>QAR-Qatar Rial<br>ROL-Romanian Leu<br>RUB-Russian Rouble<br>WST-Samoa Tala<br>STD-Sao Tome Dobra<br>SAR-Saudi Arabian Riyal<br>SCR-Seychelles Rupee<br>SLL-Sierra Leone Leone<br>XAG-Silver Ounces<br>SGD-Singapore Dollar<br>SKK-Slovak Koruna<br>SIT-Slovenian Tolar<br>SBD-Solomon Islands Dollar<br>SOS-Somali Shilling<br>ZAR-South African Rand<br>LKR-Sri Lanka Rupee<br>SHP-St Helena Pound<br>SDD-Sudanese Dinar<br>SRG-Surinam Guilder<br>SZL-Swaziland Lilageni<br>SEK-Swedish Krona<br>TRY-Turkey Lira<br>CHF-Swiss Franc<br>SYP-Syrian Pound<br>TWD-Taiwan Dollar<br>TZS-Tanzanian Shilling<br>THB-Thai Baht<br>TOP-Tonga Pa'anga<br>TTD-Trinidad&amp;amp;Tobago Dollar<br>TND-Tunisian Dinar<br>TRL-Turkish Lira<br>USD-U.S. Dollar<br>AED-UAE Dirham<br>UGX-Ugandan Shilling<br>UAH-Ukraine Hryvnia<br>UYU-Uruguayan New Peso<br>VUV-Vanuatu Vatu<br>VEB-Venezuelan Bolivar<br>VND-Vietnam Dong<br>YER-Yemen Riyal<br>YUM-Yugoslav Dinar<br>ZMK-Zambian Kwacha<br>ZWD-Zimbabwe Dollar</font></p></blockquote>]]]]>><![CDATA[</wsdl:documentation>
+      <wsdl:input message="tns:ConversionRateHttpPostIn"/>
+      <wsdl:output message="tns:ConversionRateHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CurrencyConvertorSoap" type="tns:CurrencyConvertorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConversionRate">
+      <soap:operation soapAction="http://www.webserviceX.NET/ConversionRate" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CurrencyConvertorSoap12" type="tns:CurrencyConvertorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConversionRate">
+      <soap12:operation soapAction="http://www.webserviceX.NET/ConversionRate" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CurrencyConvertorHttpGet" type="tns:CurrencyConvertorHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="ConversionRate">
+      <http:operation location="/ConversionRate"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CurrencyConvertorHttpPost" type="tns:CurrencyConvertorHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="ConversionRate">
+      <http:operation location="/ConversionRate"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CurrencyConvertor">
+    <wsdl:port name="CurrencyConvertorSoap" binding="tns:CurrencyConvertorSoap">
+      <soap:address location="http://www.webservicex.com/currencyconvertor.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CurrencyConvertorSoap12" binding="tns:CurrencyConvertorSoap12">
+      <soap12:address location="http://www.webservicex.com/currencyconvertor.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CurrencyConvertorHttpGet" binding="tns:CurrencyConvertorHttpGet">
+      <http:address location="http://www.webservicex.com/currencyconvertor.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CurrencyConvertorHttpPost" binding="tns:CurrencyConvertorHttpPost">
+      <http:address location="http://www.webservicex.com/currencyconvertor.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://Lucky:8088/mockCurrencyConvertorSoap</con:endpoint>
+    <con:endpoint>http://localhost:8088/mockCurrencyConvertorSoap?WSDL</con:endpoint><con:endpoint>http://www.webservicex.com/currencyconvertor.asmx</con:endpoint></con:endpoints>
+    <con:operation id="d74bdd68-7291-42a8-9fce-f8c1b61e357d" isOneWay="false" action="http://www.webserviceX.NET/ConversionRate" name="ConversionRate" bindingOperationName="ConversionRate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="452b5106-6692-4154-9b5c-29b88a677c91" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:8088/mockCurrencyConvertorSoap?WSDL</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>USD</web:FromCurrency>
+         <web:ToCurrency>BAN</web:ToCurrency>
+      </web:ConversionRate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/ConversionRate"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+      
+    </con:operation>
+  </con:interface>
+  
+  <con:testSuite id="18141f97-49d5-451a-be8e-740fd00633ba" name="WebServiceTestSuite">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="f1a31b23-e4f5-4864-96cd-5afec5cc063c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="groovy" name="createFolder" id="b773b9f9-a633-4cee-be5f-e8eb37748d2a">
+        <con:settings/>
+        <con:config><script>import groovy.io.FileType
+
+//Get project name
+def groovyUtils=new  com.eviware.soapui.support.GroovyUtils(context)
+def projectPath = groovyUtils.projectPath
+log.info "Project path is: $projectPath"
+
+//Get testcase name
+def testCase = testRunner.testCase.name
+testRunner.testCase.setPropertyValue('TESTCASE_NAME', testCase)
+log.info "Test case is: $testCase"
+
+//Get timestamp
+def timeStamp = new Date().format("yyyy-MM-dd HH:mm:ss SSS")
+testRunner.testCase.testSuite.project.setPropertyValue('TIMESTAMP', timeStamp)
+log.info "Timestamp is: $timeStamp"
+
+//Set output path
+def outputFolderPath = projectPath+"/../output/"+testCase+timeStamp
+testRunner.testCase.setPropertyValue('OUTPUT_FOLDER_PATH', outputFolderPath)
+log.info "outputFolderPath is: $outputFolderPath"
+
+//Create folder inside Output folder if does not exist
+def folder = new File(outputFolderPath)
+if (!folder.exists()){
+	folder.mkdirs()
+}
+
+//Setting ROW_NUM to 1 to read the test data from row number one, 
+//before every run it will be set to 1 to start the test from row number 1
+String rowNum = 1
+testRunner.testCase.setPropertyValue('ROW_NUM', rowNum)</script></con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="readDataFromExcel" id="5d7fc3ea-11e1-4ece-bba6-025fe47d7fd9">
+        <con:settings/>
+        <con:config><script>/* 
+ * Description: Fetch the following fields from testdata sheet; Execute, Operation, WebService, EndPoint, Env, TestCase, Data1 and Data2
+ * Set the values at different level for test execution
+ */
+ 
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.hssf.usermodel.HSSFHyperlink;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.IndexedColors;
+import org.apache.poi.xssf.usermodel.*;
+
+import com.eviware.soapui.settings.SSLSettings
+import com.eviware.soapui.SoapUI
+
+	def rowNum = testRunner.testCase.getPropertyValue("ROW_NUM").toInteger()
+	def testCaseName = testRunner.testCase.getPropertyValue("TESTCASE_NAME")
+	def projectName = testRunner.testCase.testSuite.project.name
+	def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+	def projectPath = groovyUtils.projectPath
+	def testDataFilePath = projectPath+"/../testData/"+projectName+".xlsx"
+	def XSSFWorkbook workbook = null;
+     def XSSFSheet sheet = null;
+     def XSSFRow row   =null;
+     def XSSFCell cell = null
+     def String filename = null
+     def String path;
+     def FileInputStream fis = null;
+     def FileOutputStream fileOut =null;
+
+     fis = new FileInputStream(new File(testDataFilePath));
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheet(testCaseName);
+	int rowCount = sheet.getLastRowNum().toInteger()
+
+	if(rowNum&lt;=rowCount){
+		gRow = sheet.getRow(rowNum)
+		gCell = gRow.getCell(0)
+		String exeValue = gCell.getStringCellValue()
+		log.info "FLAG $exeValue"
+		
+		if(exeValue=="Y"){
+			colCount = sheet.getRow(rowNum).getLastCellNum()
+
+			for(j=1;j&lt;colCount;j++){
+				gRow = sheet.getRow(0)
+				gCell = gRow.getCell(j)
+				String headerValue = gCell.getStringCellValue()
+			//Fetching web service name from the excel sheet
+				if(headerValue.contains("WebService")){
+					gRow = sheet.getRow(rowNum)
+					gCell = gRow.getCell(j)
+					String webService = gCell.getStringCellValue()
+					testRunner.testCase.setPropertyValue('WEBSERVICE', webService)
+					log.info "WebService =  $webService"
+				}
+			
+			//Fetching operation name from the excel sheet
+				if(headerValue.contains("Operation")){
+					gRow = sheet.getRow(rowNum)
+					gCell = gRow.getCell(j)
+					String Operation = gCell.getStringCellValue()
+					testRunner.testCase.setPropertyValue('OPERATION', Operation)
+					log.info "Operation = $Operation"
+				}
+			
+			/*fetching environment name from excel sheet*/
+				if(headerValue.contains("Env")){
+					gRow = sheet.getRow(rowNum)
+					gCell = gRow.getCell(j)
+					String environMent = gCell.getStringCellValue()
+					testRunner.testCase.setPropertyValue('ENVIRONMENT', environMent)
+					log.info "Env = $environMent"
+				}
+
+			/* Fetch testcase name from testdata sheet*/
+				if(headerValue.contains("TestCase")){
+					gRow = sheet.getRow(rowNum)
+					gCell = gRow.getCell(j)
+					String testName = gCell.getStringCellValue()
+					
+					testRunner.testCase.setPropertyValue('TEST_CASE_NAME', testName)
+					log.info "TEST_CASE_NAME = $testName"
+				}
+
+				/* Fetch FromCurrency from testdata sheet*/
+				if(headerValue.contains("FromCurrency")){
+					gRow = sheet.getRow(rowNum)
+					gCell = gRow.getCell(j)
+					String fromCurrency = gCell.getStringCellValue()
+					
+					testRunner.testCase.setPropertyValue('FromCurrency', fromCurrency)
+					log.info "FromCurrency = $fromCurrency"
+				}
+
+				/* Fetch ToCurrency from testdata sheet*/
+				if(headerValue.contains("ToCurrency")){
+					gRow = sheet.getRow(rowNum)
+					gCell = gRow.getCell(j)
+					String toCurrency = gCell.getStringCellValue()
+					
+					testRunner.testCase.setPropertyValue('ToCurrency', toCurrency)
+					log.info "ToCurrency = $toCurrency"
+				}
+			}
+		}
+		else{
+			int Row = rowNum+1
+			testRunner.testCase.setPropertyValue('ROW_NUM', Row.toString())
+			testRunner.gotoStepByName("bootstrap")
+		}
+	}</script></con:config>
+      </con:testStep>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <con:testStep type="goto" name="getNextStep" id="bc8e42ce-66e2-42ca-8002-cd01ca785af1">
+        <con:settings/>
+        <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:condition>
+            <con:name>whileTrue</con:name>
+            <con:type>XPATH</con:type>
+            <con:expression>true()</con:expression>
+            <con:targetStep>readDataFromExcel</con:targetStep>
+          </con:condition>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="delay" name="End" id="9ca8dcf1-f1bb-483c-a025-4667de2bd90b">
+        <con:settings/>
+        <con:config>
+          <delay>1000</delay>
+        </con:config>
+      </con:testStep>
+      <con:properties>
+        <con:property>
+          <con:name>ROW_NUM</con:name>
+          <con:value>1</con:value>
+        </con:property>
+        <con:property>
+          <con:name>TESTCASE_NAME</con:name>
+          <con:value>WebServiceTest</con:value>
+        </con:property>
+        <con:property>
+          <con:name>OUTPUT_FOLDER_PATH</con:name>
+          <con:value>C:\testwork\SoapUIWorkspace\SoapUIWorkspace\projects/../output/WebServiceTest2020-03-28 00:10:43 027</con:value>
+        </con:property>
+        <con:property>
+          <con:name>OPERATION</con:name>
+          <con:value>ConversionRate</con:value>
+        </con:property>
+        <con:property>
+          <con:name>WEBSERVICE</con:name>
+          <con:value>CurrencyConvertorSoap</con:value>
+        </con:property>
+        <con:property>
+          <con:name>ENVIRONMENT</con:name>
+          <con:value>SIT</con:value>
+        </con:property>
+        <con:property>
+          <con:name>TAG_NAME</con:name>
+          <con:value>ToCurrency</con:value>
+        </con:property>
+        <con:property>
+          <con:name>TAG_VALUE</con:name>
+          <con:value>EUR</con:value>
+        </con:property>
+        <con:property>
+          <con:name>SAMPLE_XML</con:name>
+          <con:value>C:\testwork\SoapUIWorkspace\SoapUIWorkspace\projects\..\sampleXML\ConversionRate.xml</con:value>
+        </con:property>
+        <con:property>
+          <con:name>FAILED_STATUS</con:name>
+          <con:value>FAILED</con:value>
+        </con:property>
+        <con:property>
+          <con:name>OP_REQUEST</con:name>
+          <con:value>/home/ryan/Soap_Practice/projects/../output/WebServiceTest2017-07-05 01:04:41 520/Test6_Request_2017-07-05-01-04-45.xml</con:value>
+        </con:property>
+        <con:property>
+          <con:name>OP_RESPONSE</con:name>
+          <con:value>/home/ryan/Soap_Practice/projects/../output/WebServiceTest2017-07-05 01:04:41 520/Test6_Response_2017-07-05-01-04-45.xml</con:value>
+        </con:property>
+        <con:property>
+          <con:name>TEST_CASE_NAME</con:name>
+          <con:value>Test1</con:value>
+        </con:property>
+      <con:property><con:name>FromCurrency</con:name><con:value>USD</con:value></con:property><con:property><con:name>ToCurrency</con:name><con:value>IND</con:value></con:property></con:properties>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:mockService id="00b05233-dd73-4ba4-b405-5410f1beb444" port="8088" path="/mockCurrencyConvertorSoap" host="Lucky" name="CurrencyConvertorSoap MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConversionRate" id="ad29ee57-a6d7-41e3-915c-0d9c6100eb9e" interface="CurrencyConvertorSoap" operation="ConversionRate"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="7f7f9bf3-b123-4244-b02d-a4ada949c277" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:script>import javax.xml.xpath.*
+import groovy.xml.StreamingMarkupBuilder
+import groovy.lang.Binding;
+import groovy.lang.Script;
+def util = new com.eviware.soapui.support.GroovyUtils( context )
+def xml = new XmlSlurper().parseText(mockRequest.requestContent)
+def currencyToConvert = xml.Body.ConversionRate.ToCurrency
+def str = currencyToConvert.toString()
+log.info str
+if(str == 'IND')
+{
+context.ConversionRate = "1.5"
+}
+else if(str == 'AUD')
+{
+context.ConversionRate = "2.5"
+}
+else
+{
+ context.ConversionRate = "0.0"
+}
+
+</con:script><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ConversionRateResponse>
+         <web:ConversionRateResult>${ConversionRate}</web:ConversionRateResult>
+      </web:ConversionRateResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/ConversionRate"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties>
+    <con:property>
+      <con:name>TIMESTAMP</con:name>
+      <con:value>2020-03-28 00:10:43 027</con:value>
+    </con:property>
+  </con:properties>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:sensitiveInformation/>
+</con:soapui-project>
