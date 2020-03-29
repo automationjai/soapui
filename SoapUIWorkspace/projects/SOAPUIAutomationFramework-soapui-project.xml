@@ -324,7 +324,7 @@
   <con:testSuite id="18141f97-49d5-451a-be8e-740fd00633ba" name="WebServiceTestSuite">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="f1a31b23-e4f5-4864-96cd-5afec5cc063c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest-DataDriven" searchProperties="true">
+    <con:testCase id="f1a31b23-e4f5-4864-96cd-5afec5cc063c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="createFolder" id="b773b9f9-a633-4cee-be5f-e8eb37748d2a">
         <con:settings/>
@@ -398,7 +398,7 @@ import com.eviware.soapui.SoapUI
      fis = new FileInputStream(new File(testDataFilePath));
 	workbook = new XSSFWorkbook(fis);
 	sheet = workbook.getSheet(testCaseName);
-	int rowCount = sheet.getLastRowNum().toInteger()
+	int rowCount = sheet.getLastRowNum().toInteger();
 
 	for (;rowNum&lt;=rowCount;rowNum++){
 		gRow = sheet.getRow(rowNum)
@@ -506,7 +506,7 @@ import com.eviware.soapui.SoapUI
         </con:property>
         <con:property>
           <con:name>OUTPUT_FOLDER_PATH</con:name>
-          <con:value>C:\testwork\SoapUIWorkspace\SoapUIWorkspace\projects/../output/WebServiceTest2020-03-29 15:08:14 381</con:value>
+          <con:value>C:\testwork\SoapUIWorkspace\SoapUIWorkspace\projects/../output/WebServiceTest2020-03-29 22:17:56 640</con:value>
         </con:property>
         <con:property>
           <con:name>OPERATION</con:name>
@@ -608,7 +608,7 @@ else
 </soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/ConversionRate"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties>
     <con:property>
       <con:name>TIMESTAMP</con:name>
-      <con:value>2020-03-29 15:08:14 381</con:value>
+      <con:value>2020-03-29 22:17:56 640</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
