@@ -324,7 +324,7 @@
   <con:testSuite id="18141f97-49d5-451a-be8e-740fd00633ba" name="WebServiceTestSuite">
     <con:settings/>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="f1a31b23-e4f5-4864-96cd-5afec5cc063c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest" searchProperties="true">
+    <con:testCase id="f1a31b23-e4f5-4864-96cd-5afec5cc063c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest-DataDriven" searchProperties="true">
       <con:settings/>
       <con:testStep type="groovy" name="createFolder" id="b773b9f9-a633-4cee-be5f-e8eb37748d2a">
         <con:settings/>
@@ -400,7 +400,7 @@ import com.eviware.soapui.SoapUI
 	sheet = workbook.getSheet(testCaseName);
 	int rowCount = sheet.getLastRowNum().toInteger()
 
-	if(rowNum&lt;=rowCount){
+	for (;rowNum&lt;=rowCount;rowNum++){
 		gRow = sheet.getRow(rowNum)
 		gCell = gRow.getCell(0)
 		String exeValue = gCell.getStringCellValue()
@@ -470,11 +470,12 @@ import com.eviware.soapui.SoapUI
 					log.info "ToCurrency = $toCurrency"
 				}
 			}
+			
 		}
 		else{
 			int Row = rowNum+1
 			testRunner.testCase.setPropertyValue('ROW_NUM', Row.toString())
-			testRunner.gotoStepByName("bootstrap")
+			testRunner.gotoStepByName("readDataFromExcel")
 		}
 	}</script></con:config>
       </con:testStep>
@@ -487,17 +488,7 @@ import com.eviware.soapui.SoapUI
       
       
       
-      <con:testStep type="goto" name="getNextStep" id="bc8e42ce-66e2-42ca-8002-cd01ca785af1">
-        <con:settings/>
-        <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:condition>
-            <con:name>whileTrue</con:name>
-            <con:type>XPATH</con:type>
-            <con:expression>true()</con:expression>
-            <con:targetStep>readDataFromExcel</con:targetStep>
-          </con:condition>
-        </con:config>
-      </con:testStep>
+      
       <con:testStep type="delay" name="End" id="9ca8dcf1-f1bb-483c-a025-4667de2bd90b">
         <con:settings/>
         <con:config>
@@ -507,7 +498,7 @@ import com.eviware.soapui.SoapUI
       <con:properties>
         <con:property>
           <con:name>ROW_NUM</con:name>
-          <con:value>1</con:value>
+          <con:value>5</con:value>
         </con:property>
         <con:property>
           <con:name>TESTCASE_NAME</con:name>
@@ -515,7 +506,7 @@ import com.eviware.soapui.SoapUI
         </con:property>
         <con:property>
           <con:name>OUTPUT_FOLDER_PATH</con:name>
-          <con:value>C:\testwork\SoapUIWorkspace\SoapUIWorkspace\projects/../output/WebServiceTest2020-03-28 00:10:43 027</con:value>
+          <con:value>C:\testwork\SoapUIWorkspace\SoapUIWorkspace\projects/../output/WebServiceTest2020-03-29 15:08:14 381</con:value>
         </con:property>
         <con:property>
           <con:name>OPERATION</con:name>
@@ -555,13 +546,37 @@ import com.eviware.soapui.SoapUI
         </con:property>
         <con:property>
           <con:name>TEST_CASE_NAME</con:name>
-          <con:value>Test1</con:value>
+          <con:value>Test3</con:value>
         </con:property>
-      <con:property><con:name>FromCurrency</con:name><con:value>USD</con:value></con:property><con:property><con:name>ToCurrency</con:name><con:value>IND</con:value></con:property></con:properties>
+      <con:property><con:name>FromCurrency</con:name><con:value>USD</con:value></con:property><con:property><con:name>ToCurrency</con:name><con:value>EUR</con:value></con:property></con:properties>
     </con:testCase>
-    <con:properties/>
+    <con:testCase id="f38d81d1-3033-409b-a9d2-4456e46453a9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest-DynamicMock1" searchProperties="true"><con:settings/><con:testStep type="request" name="Request1" id="00019585-e690-458a-a016-e985589253e5"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="Request1" id="615be9a0-ab22-4a5b-b5a5-cb35928db501"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockCurrencyConvertorSoap?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:ConversionRate>\r
+         <web:FromCurrency>USD</web:FromCurrency>\r
+         <web:ToCurrency>IND</web:ToCurrency>\r
+      </web:ConversionRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="f3bbb83b-b10a-4065-9718-91701a53f05a"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d7f58731-10a5-448b-a003-37d88f7d348f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest-DynamicMock2" searchProperties="true"><con:settings/><con:testStep type="request" name="Request1" id="9073d618-2309-4577-ac21-8799e2fdc7e3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="Request1" id="615be9a0-ab22-4a5b-b5a5-cb35928db501"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockCurrencyConvertorSoap?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:ConversionRate>\r
+         <web:FromCurrency>USD</web:FromCurrency>\r
+         <web:ToCurrency>AUD</web:ToCurrency>\r
+      </web:ConversionRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="f3bbb83b-b10a-4065-9718-91701a53f05a"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="55c0b961-475b-4c05-bf1d-1a96df8243a6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="WebServiceTest-DynamicMock3" searchProperties="true"><con:settings/><con:testStep type="request" name="Request1" id="690ff1bb-47ec-48b8-9a83-ce31d717b0b6"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap</con:interface><con:operation>ConversionRate</con:operation><con:request name="Request1" id="615be9a0-ab22-4a5b-b5a5-cb35928db501"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8088/mockCurrencyConvertorSoap?WSDL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:ConversionRate>\r
+         <web:FromCurrency>USD</web:FromCurrency>\r
+         <web:ToCurrency>EUR</web:ToCurrency>\r
+      </web:ConversionRate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="f3bbb83b-b10a-4065-9718-91701a53f05a"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/>
   </con:testSuite>
-  <con:mockService id="00b05233-dd73-4ba4-b405-5410f1beb444" port="8088" path="/mockCurrencyConvertorSoap" host="Lucky" name="CurrencyConvertorSoap MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConversionRate" id="ad29ee57-a6d7-41e3-915c-0d9c6100eb9e" interface="CurrencyConvertorSoap" operation="ConversionRate"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="7f7f9bf3-b123-4244-b02d-a4ada949c277" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:script>import javax.xml.xpath.*
+  <con:mockService id="00b05233-dd73-4ba4-b405-5410f1beb444" port="8088" path="/mockCurrencyConvertorSoap" host="Lucky" name="CurrencyConvertorSoap MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConversionRate" id="ad29ee57-a6d7-41e3-915c-0d9c6100eb9e" interface="CurrencyConvertorSoap" operation="ConversionRate"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>import javax.xml.xpath.*
 import groovy.xml.StreamingMarkupBuilder
 import groovy.lang.Binding;
 import groovy.lang.Script;
@@ -583,7 +598,7 @@ else
  context.ConversionRate = "0.0"
 }
 
-</con:script><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
+</con:dispatchPath><con:response name="Response 1" id="7f7f9bf3-b123-4244-b02d-a4ada949c277" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:script/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET/">
    <soapenv:Header/>
    <soapenv:Body>
       <web:ConversionRateResponse>
@@ -593,7 +608,7 @@ else
 </soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/ConversionRate"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties>
     <con:property>
       <con:name>TIMESTAMP</con:name>
-      <con:value>2020-03-28 00:10:43 027</con:value>
+      <con:value>2020-03-29 15:08:14 381</con:value>
     </con:property>
   </con:properties>
   <con:wssContainer/>
